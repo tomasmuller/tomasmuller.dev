@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Tomás Müller - Senior Remote Software Engineer</title>
+  <meta name="description" content="Senior Remote Software Engineer | Ruby on Rails Specialist | Product Builder">
+  <meta property="og:title" content="Tomás Müller">
+  <meta property="og:description" content="Senior Remote Software Engineer | Ruby on Rails Specialist | Product Builder">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tomasmuller.dev">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tomás Müller">
+  <meta name="twitter:description" content="Senior Remote Software Engineer | Ruby on Rails Specialist | Product Builder">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+  <style>
+    /* Design Tokens */
+    :root {
+      --bg: #fafbfc;
+      --bg-gradient-1: rgba(147, 197, 253, 0.15);
+      --bg-gradient-2: rgba(196, 181, 253, 0.1);
+      --card-bg: rgba(255, 255, 255, 0.85);
+      --card-border: rgba(0, 0, 0, 0.04);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+      --fg: #1a1f36;
+      --muted: #6b7280;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --accent-fg: #fff;
+      --focus: #60a5fa;
+      --link-underline: rgba(59, 130, 246, 0.3);
+      --noise-opacity: 0.02;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0a0b0d;
+        --bg-gradient-1: rgba(59, 130, 246, 0.25);
+        --bg-gradient-2: rgba(168, 85, 247, 0.2);
+        --card-bg: rgba(18, 20, 24, 0.85);
+        --card-border: rgba(255, 255, 255, 0.06);
+        --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        --fg: #e5e7eb;
+        --muted: #9ca3af;
+        --accent: #60a5fa;
+        --accent-hover: #93bbfd;
+        --link-underline: rgba(96, 165, 250, 0.4);
+        --noise-opacity: 0.025;
+      }
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--fg);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Background with gradient and noise */
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at top left, var(--bg-gradient-1), transparent 50%),
+        radial-gradient(ellipse at bottom right, var(--bg-gradient-2), transparent 50%);
+      z-index: -2;
+    }
+    
+    /* CSS-only noise effect */
+    body::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: var(--noise-opacity);
+      z-index: -1;
+      background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(0,0,0,.025) 35px, rgba(0,0,0,.025) 70px),
+        repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(0,0,0,.02) 35px, rgba(0,0,0,.02) 70px);
+    }
+    
+    main {
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--card-border);
+      border-radius: 1.5rem;
+      padding: clamp(2rem, 5vw, 3.5rem);
+      box-shadow: var(--card-shadow);
+      position: relative;
+    }
+    
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .headline {
+      color: var(--muted);
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      margin-bottom: 2.5rem;
+      line-height: 1.5;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      position: relative;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      padding: 0.25rem 0;
+    }
+    
+    a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--link-underline);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    
+    a:hover {
+      color: var(--accent-hover);
+    }
+    
+    a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    
+    a:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+    
+    footer {
+      color: var(--muted);
+      font-size: 0.875rem;
+      opacity: 0.8;
+    }
+    
+    /* Respect motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+      a::after {
+        transition: none;
+      }
+    }
+    
+    /* Mobile refinements */
+    @media (max-width: 480px) {
+      body {
+        padding: 1rem;
+      }
+      main {
+        padding: clamp(1.5rem, 4vw, 2.5rem);
+      }
+      nav ul {
+        gap: 1.5rem;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tomás Müller",
+    "jobTitle": "Senior Software Engineer",
+    "sameAs": "https://www.linkedin.com/in/t0masmuller/"
+  }
+  </script>
+</head>
+<body>
+  <main>
+    <h1>Tomás Augusto Müller</h1>
+    <p class="headline">Senior Remote Software Engineer | Ruby on Rails Specialist | Product Builder</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="https://logs.tomasmuller.dev/about?utm_source=tomasmuller.dev">About</a></li>
+        <li><a href="https://www.linkedin.com/in/t0masmuller?utm_source=tomasmuller.dev">LinkedIn</a></li>
+        <li><a href="https://logs.tomasmuller.dev?utm_source=tomasmuller.dev">Notes</a></li>
+      </ul>
+    </nav>
+    <footer>© 2025 Tomás Müller</footer>
+  </main>
+</body>
+</html>
